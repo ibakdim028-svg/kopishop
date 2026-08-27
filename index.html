@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Kopi Shop 80an</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f7e7c6;
+            color: #2d1b12;
+        }
+
+        /* NAVBAR */
+        nav {
+            background: #26140e;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .logo {
+            color: #f5bd4c;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #f5bd4c;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 550px;
+            display: flex;
+            align-items: center;
+            padding: 60px 8%;
+            background:
+                linear-gradient(90deg,
+                rgba(38,20,14,0.95),
+                rgba(38,20,14,0.55)),
+                url("https://images.unsplash.com/photo-1447933601403-0c6688de566e")
+                center/cover;
+        }
+
+        .hero-content {
+            max-width: 600px;
+            color: white;
+        }
+
+        .hero-content small {
+            color: #f5bd4c;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .hero h1 {
+            font-size: 65px;
+            line-height: 1;
+            margin: 20px 0;
+        }
+
+        .hero p {
+            font-size: 19px;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 28px;
+            background: #f5bd4c;
+            color: #26140e;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 30px;
+        }
+
+        .btn:hover {
+            background: white;
+        }
+
+        /* JUDUL */
+        .title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .title h2 {
+            font-size: 38px;
+        }
+
+        .title p {
+            margin-top: 10px;
+            color: #76523b;
+        }
+
+        /* MENU */
+        .menu-section {
+            padding: 80px 8%;
+        }
+
+        .menu {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(230px, 1fr));
+            gap: 25px;
+        }
+
+        .menu-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            border-bottom: 5px solid #f5bd4c;
+            transition: 0.3s;
+        }
+
+        .menu-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .coffee-icon {
+            font-size: 55px;
+            margin-bottom: 15px;
+        }
+
+        .menu-card h3 {
+            font-size: 23px;
+            margin-bottom: 10px;
+        }
+
+        .menu-card p {
+            color: #76523b;
+            line-height: 1.5;
+        }
+
+        .price {
+            display: block;
+            margin-top: 15px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #a44b28;
+        }
+
+        /* PROMO */
+        .promo {
+            background: #a44b28;
+            color: white;
+            padding: 70px 8%;
+            text-align: center;
+        }
+
+        .promo h2 {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .promo p {
+            font-size: 18px;
+            margin-bottom: 25px;
+        }
+
+        /* TENTANG */
+        .about {
+            padding: 80px 8%;
+            display: flex;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h2 {
+            font-size: 38px;
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            line-height: 1.8;
+            color: #76523b;
+        }
+
+        .about-box {
+            flex: 1;
+            background: #26140e;
+            color: white;
+            padding: 50px;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        .about-box h3 {
+            color: #f5bd4c;
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #26140e;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        footer span {
+            color: #f5bd4c;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 700px) {
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 12px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 45px;
+            }
+
+            .about {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <div class="logo">☕ KOPI 80AN</div>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#promo">Promo</a></li>
+            <li><a href="#about">Tentang</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- HERO -->
+    <header class="hero" id="home">
+
+        <div class="hero-content">
+
+            <small>EST. 1980</small>
+
+            <h1>
+                Kopi Klasik,
+                Rasa Autentik.
+            </h1>
+
+            <p>
+                Selamat datang di Kopi Shop 80an.
+                Tempat berkumpul, menikmati kopi,
+                dan bernostalgia dengan suasana
+                tahun 80-an.
+            </p>
+
+            <a href="#menu" class="btn">
+                Lihat Menu ☕
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- MENU -->
+    <section class="menu-section" id="menu">
+
+        <div class="title">
+            <h2>Menu Favorit</h2>
+            <p>Kopi pilihan dengan rasa yang bikin balik lagi.</p>
+        </div>
+
+        <div class="menu">
+
+            <article class="menu-card">
+                <div class="coffee-icon">☕</div>
+
+                <h3>Kopi Tubruk</h3>
+
+                <p>
+                    Kopi tradisional Indonesia
+                    dengan aroma yang kuat.
+                </p>
+
+                <span class="price">
+                    Rp8.000
+                </span>
+            </article>
+
+
+            <article class="menu-card">
+                <div class="coffee-icon">🥛</div>
+
+                <h3>Kopi Susu Jadul</h3>
+
+                <p>
+                    Kopi hitam dengan susu
+                    manis yang lembut.
+                </p>
+
+                <span class="price">
+                    Rp10.000
+                </span>
+            </article>
+
+
+            <article class="menu-card">
+                <div class="coffee-icon">🧊</div>
+
+                <h3>Es Kopi 80an</h3>
+
+                <p>
+                    Kopi dingin dengan rasa
+                    manis dan menyegarkan.
+                </p>
+
+                <span class="price">
+                    Rp12.000
+                </span>
+            </article>
+
+
+            <article class="menu-card">
+                <div class="coffee-icon">🍵</div>
+
+                <h3>Teh Manis</h3>
+
+                <p>
+                    Teh klasik yang cocok
+                    untuk menemani ngobrol.
+                </p>
+
+                <span class="price">
+                    Rp6.000
+                </span>
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROMO -->
+    <section class="promo" id="promo">
+
+        <h2>🔥 PROMO NOSTALGIA 🔥</h2>
+
+        <p>
+            Beli 2 kopi, gratis 1 teh manis!
+        </p>
+
+        <a href="#menu" class="btn">
+            Pesan Sekarang
+        </a>
+
+    </section>
+
+
+    <!-- TENTANG -->
+    <section class="about" id="about">
+
+        <div class="about-text">
+
+            <h2>Tentang Kami</h2>
+
+            <p>
+                Kopi Shop 80an hadir untuk membawa kembali
+                suasana kedai kopi klasik. Dengan desain
+                sederhana, musik nostalgia, dan kopi
+                bercita rasa khas Indonesia.
+            </p>
+
+            <br>
+
+            <p>
+                Nongkrong santai, ngobrol bersama teman,
+                dan nikmati secangkir kopi seperti zaman dulu.
+            </p>
+
+        </div>
+
+
+        <div class="about-box">
+
+            <h3>☕ KOPI 80AN</h3>
+
+            <p>
+                "Secangkir kopi,
+                sejuta cerita."
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>
+            © 2026 <span>Kopi Shop 80an</span>
+        </p>
+
+        <p>
+            Jl. Nostalgia No. 80 • Indonesia
+        </p>
+
+    </footer>
+
+</body>
+  </html>
